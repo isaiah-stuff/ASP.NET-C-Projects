@@ -1,0 +1,1 @@
+A collection of practice projects for CMP 285 at Franklin College written on the ASP.NET Core Framework. Centralized on the SportsPlay database, schema and SQL examples available https://github.com/isaiah-stuff/SportsPlay_SQLSamples.
