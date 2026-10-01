@@ -1,0 +1,30 @@
+﻿@page
+@model Stuffle.Isaiah.Exam3.Pages.Categories.ModifyCategoryModel
+@{
+    ViewData["Title"] = "Modify Category";
+}
+
+<h1>Modify Category</h1>
+
+<label>Message:</label>
+<label style="color: @Model.MessageColor">@Model.Message</label>
+
+<form method="post">
+
+    <input asp-for="Category.CategoryID" type="hidden" />
+
+    <table>
+        <tr>
+            <td><label asp-for="Category.Category1"></label></td>
+            <td><input asp-for="Category.Category1" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input asp-page-handler="Modify" type="submit" value="Modify" />
+                <a asp-page="CancelCategory">Cancel</a>
+            </td>
+        </tr>
+    </table>
+
+</form>

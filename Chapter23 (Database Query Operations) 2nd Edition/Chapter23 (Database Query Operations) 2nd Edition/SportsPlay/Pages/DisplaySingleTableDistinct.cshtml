@@ -1,0 +1,23 @@
+﻿@page 
+@model SportsPlay.Pages.DisplaySingleTableDistinctModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Display States</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th><label>State</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ResultIList)
+        {
+        <tr>
+            <td><label>@item.State</label></td>
+        </tr>
+        }
+    </tbody>
+</table>

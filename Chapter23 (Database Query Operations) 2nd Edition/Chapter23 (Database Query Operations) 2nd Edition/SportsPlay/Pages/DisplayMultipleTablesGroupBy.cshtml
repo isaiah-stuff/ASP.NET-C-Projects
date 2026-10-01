@@ -1,0 +1,33 @@
+﻿@page 
+@model SportsPlay.Pages.DisplayMultipleTablesGroupByModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Display Products</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th><label>Category</label></th>
+            <th><label>Count</label></th>
+            <th><label>Sum</label></th>
+            <th><label>Average</label></th>
+            <th><label>Maximum</label></th>
+            <th><label>Minimum</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ResultIList)
+        {
+        <tr>
+            <td><label>@item.Category</label></td>
+            <td><label>@item.Count</label></td>
+            <td><label>@item.Sum</label></td>
+            <td><label>@item.Average</label></td>
+            <td><label>@item.Maximum</label></td>
+            <td><label>@item.Minimum</label></td>
+        </tr>
+        }
+    </tbody>
+</table>

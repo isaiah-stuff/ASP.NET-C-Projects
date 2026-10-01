@@ -1,0 +1,43 @@
+﻿@page "/"
+@model Stuffle.Isaiah.Exam2.Pages.Exam2Model
+@{
+}
+
+<div>
+    <div>
+    <label>From:</label><br />
+        <input asp-for="From" id="From" type="text" class="message" />
+    </div>
+
+    <div>
+    <label >To:</label><br />
+        <input asp-for ="To" id="To" type="text" />
+    </div>
+
+    <div>
+    <label>Subject:</label><br />
+        <input asp-for="Subject" id="Subject" type="text" />
+    </div>
+
+    <div>
+    <label>Message:</label><br />
+        <input asp-for="Message" id="Message" type="text" />
+    </div>
+
+    <div>
+        <input onclick="CompleteFields()"; type="button" value="Complete Fields"></input><br />
+    </div>
+    <div>
+        <input asp-page-handler="Submit" type="submit"></input></br />
+    </div>
+</div>
+
+<script type="text/javascript">
+    function CompleteFields() {
+        document.getElementById("From").value = "Isaiah Stuffle";
+        document.getElementById("To").value = "rregal@sportsplay.com";
+        document.getElementById("Subject").value = "Recent Purchase";
+        document.getElementById("Message").value = "I recently purchased a tennis racket from your site and it arrived damged.";
+    }
+
+</script>

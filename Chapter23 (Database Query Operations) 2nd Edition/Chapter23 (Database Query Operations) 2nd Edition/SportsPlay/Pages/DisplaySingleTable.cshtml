@@ -1,0 +1,33 @@
+﻿@page 
+@model SportsPlay.Pages.DisplaySingleTableModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Display Products</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th><label>Product</label></th>
+            <th><label>Image</label></th>
+            <th><label>Price</label></th>
+            <th><label>Number in Stock</label></th>
+            <th><label>Number on Order</label></th>
+            <th><label>Reorder Level</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ProductIList)
+        {
+        <tr>
+            <td><label>@item.Product1</label></td>
+            <td><label>@item.Image</label></td>
+            <td><label>@item.Price</label></td>
+            <td><label>@item.NumberInStock</label></td>
+            <td><label>@item.NumberOnOrder</label></td>
+            <td><label>@item.ReorderLevel</label></td>
+        </tr>
+        }
+    </tbody>
+</table>

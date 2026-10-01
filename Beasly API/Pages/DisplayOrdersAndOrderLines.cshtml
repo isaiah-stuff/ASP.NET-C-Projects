@@ -1,0 +1,30 @@
+﻿@page 
+@model Stuffle.Isaiah.Chapter23.Pages.DisplayOrdersAndOrderLinesModel
+@{
+    ViewData["Title"] = "Display orders And Order Lines";
+}
+
+<h1>Display Orders And Order Lines</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th><label>Order ID</label></th>
+            <th><label>Order Line ID</label></th>
+            <th><label>Date</label></th>
+            <th><label>Price</label></th>
+            <th><label>Quantity</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ResultIList)
+        {
+            <tr>
+                <td><label>@item.OrderID</label></td>
+                <td><label>@item.OrderLineID</label></td>
+                <td><label>@item.Date</label></td>
+                <td><label>@item.Price</label></td>
+                <td><label>@item.Quantity</label></td>
+            </tr>
+        }
+    </tbody>

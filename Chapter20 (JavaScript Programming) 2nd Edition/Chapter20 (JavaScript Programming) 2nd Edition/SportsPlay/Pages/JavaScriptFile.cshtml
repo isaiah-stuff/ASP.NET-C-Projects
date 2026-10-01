@@ -1,0 +1,45 @@
+﻿@page "/"
+@model SportsPlay.Pages.JavaScriptFileModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>JavaScript File</h1>
+
+<form method="post">
+
+    <label>Price</label><br />
+    <input id="txtPrice" /><br />
+    <label>Number in Stock</label><br />
+    <input id="txtNumberInStock" /><br />
+    @*use return to get a true or false telling the form to submit to the server or not*@
+    @*important when using a submit function rather than a regualr button*@
+    <input onclick="return Validate();" type="submit" value="Validate" />
+
+</form>
+
+<script type="text/javascript">
+    //better to validate onabort pageXOffset rather than the severs so not everyone is using server space to solve everything
+    function Validate() {
+
+        var strValue = "";
+        var strMessage = "";
+
+        strValue = document.getElementById("txtPrice").value;
+        strMessage = strMessage + ValidateRange(strValue, "Please enter a price between $0.00 and $10,000.00.", 0.00, 10000.00);
+
+        strValue = document.getElementById("txtNumberInStock").value;
+        strMessage = strMessage + ValidateRange(strValue, "Please enter a number in stock between 0 and 200.", 0, 200);
+
+        if (strMessage == "") {
+            alert("All items passed validation!");
+            return true;
+        }
+        else {
+            alert(strMessage);
+            return false;
+        }
+
+    }
+
+</script>

@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Stuffle.Isaiah.Chapter17</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Stuffle.Isaiah.Chapter17.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block !important;
+            margin-top: 0;
+        }
+    </style>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Stuffle.Isaiah.Chapter17</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1", style="cursor: pointer"> @*make the cursor a pointer*@
+
+                        @*Menus*@
+                        @switch (ViewData["UserStatus"].ToString())
+                        {
+                            case "M": //Managers"
+                                <li class="dropdown nav-item">
+                                        <a class="dropdown-toggle nav-link text-dark" data-toggle="dropdown">Maintain</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="nav-link text-dark" asp-page="/Customers/MaintainCustomers">Customers</a></li>
+                                                <li><a class="nav-link text-dark" asp-page="/Orders/MaintainOrders">Orders</a></li>
+                                                <li><hr /></li>
+                                                <li><a class="nav-link text-dark" asp-page="/Categories/MaintainCategories">Categories</a></li>
+                                                <li><a class="nav-link text-dark" asp-page="/Employees/MaintainEmployees">Employees</a></li>
+                                                <li><a class="nav-link text-dark" asp-page="/Products/MaintainProducts">Products</a></li>
+                                                <li><a class="nav-link text-dark" asp-page="/Shippers/MaintainShippers">Shippers</a></li>
+                                                <li><a class="nav-link text-dark" asp-page="/Suppliers/MaintainSuppliers">Suppliers</a></li>
+                                    </ul>
+                                </li>
+                                        
+                                <li class="dropdown nav-item">
+                                    <a class="dropdown-toggle nav-link text-dark" data-toggle="dropdown">View</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="nav-link text-dark" asp-page="/Reports/ViewProductInventory">Product Inventory</a></li>
+                                        <li><hr /></li>
+                                        <li><a class="nav-link text-dark" asp-page="/Reports/ViewSalesByCategory">Sales by Category</a></li>
+                                        <li><a class="nav-link text-dark" asp-page="/Reports/ViewSalesBySupplier">Sales by Supplier</a></li>
+                                    </ul>
+                                </li>
+                                break;
+                            case "S": // Staff Member's Menu.
+                                <li class="dropdown nav-item">
+                                    <a class="dropdown-toggle nav-link text-dark" data-toggle="dropdown">Maintain</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="nav-link text-dark" asp-page="/Customers/MaintainCustomers">Customers</a></li>
+                                        <li><a class="nav-link text-dark" asp-page="/Orders/MaintainOrders">Orders</a></li>
+                                    </ul>
+                                </li>
+                                break;
+                            case "C": // Customer's Menu.
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-page="/Shopping/Shop">Shop</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-page="/Shopping/ManageOrders">Manage Orders</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-page="/Shopping/ManageAccount">Manage Account</a>
+                                </li>
+                                break;
+                        }
+                        }
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <label>@ViewData["Page"] | </label>
+            <label>@ViewData["User"] | </label>
+            <label style="color:@ViewData["MessageColor"]">@ViewData["Message"]</label>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Stuffle.Isaiah.Chapter17 - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

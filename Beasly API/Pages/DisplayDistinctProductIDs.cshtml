@@ -1,0 +1,25 @@
+﻿@page 
+@model Stuffle.Isaiah.Chapter23.Pages.DisplayDistinctProductIDsModel
+@{
+    ViewData["Title"] = "Display Distinct Product IDs";
+}
+
+<h1>Display Distinct Product IDs</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th><label>Product ID</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ResultIList)
+        {
+            <tr>
+                <td><label>@item.Product1</label></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

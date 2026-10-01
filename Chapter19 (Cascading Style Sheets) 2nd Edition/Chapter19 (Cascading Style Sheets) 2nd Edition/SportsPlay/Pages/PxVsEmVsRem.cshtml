@@ -1,0 +1,27 @@
+﻿@page
+@model SportsPlay.Pages.PxVsEmVsRemModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Px vs Em vs Rem</h1>
+
+<div style="font-size: 16px">
+    <label id="lblPx" style="font-size: 12px"></label><br />
+    <label id="lblEm" style="font-size: 0.75em"></label><br />
+    <label id="lblRem" style="font-size: 0.75rem"></label><br />
+</div>
+
+<script type="text/javascript">
+
+    onload = DisplayFontSize();
+
+    function DisplayFontSize() {
+
+        document.getElementById("lblPx").innerText = "Px: " + window.getComputedStyle(document.getElementById("lblPx")).fontSize;
+        document.getElementById("lblEm").innerText = "Em: " + window.getComputedStyle(document.getElementById("lblEm")).fontSize;
+        document.getElementById("lblRem").innerText = "Rem: " + window.getComputedStyle(document.getElementById("lblRem")).fontSize;
+
+    }
+
+</script>

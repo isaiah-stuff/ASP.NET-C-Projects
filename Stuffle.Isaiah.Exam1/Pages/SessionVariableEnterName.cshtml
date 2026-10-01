@@ -1,0 +1,18 @@
+﻿@page 
+@model Stuffle.Isaiah.Exam1.Pages.SessionVariableEnterNameModel
+@{
+    ViewData["Title"] = "SessionVariableEnterName";
+}
+
+<form method="post">
+    <table>
+        <tr>
+            <td><label>Name: </label></td>
+            <td><input asp-for="Name" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input asp-page-handler="PassSessionVariable" type="submit" value="Pass Session Variable" /></td>
+        </tr>
+    </table>
+</form>

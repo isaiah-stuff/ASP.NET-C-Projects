@@ -1,0 +1,29 @@
+﻿@page 
+@model SportsPlay.Pages.LogInParameterizedQueryModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Log In</h1>
+
+<label>Message:</label>
+<label style="color: @Model.MessageColor">@Model.Message</label>
+
+<form method="post">
+
+    <table>
+        <tr>
+            <td><label>Email Address</label></td>
+            <td><input asp-for="EmailAddress" /></td>
+        </tr>
+        <tr>
+            <td><label>Password</label></td>
+            <td><input asp-for="Password" type="password" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input asp-page-handler="LogIn" type="submit" value="Log In" /></td>
+        </tr>
+    </table>
+
+</form>

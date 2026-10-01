@@ -1,0 +1,29 @@
+﻿@page 
+@model SportsPlay.Pages.ConfirmMethodModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Confirm Method</h1>
+
+<form method="post">
+    @* return makes it return true or false *@
+    <input onclick="return HandleConfirm();" type="submit" value="Handle Confirm" />
+
+</form>
+
+<script type="text/javascript">
+
+    function HandleConfirm() {
+
+        var booAnswer = confirm("Are you sure you want to post the page to the server for further processing? Click OK to post the page to the server. Otherwise, click Cancel.");
+        if (booAnswer) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+</script>

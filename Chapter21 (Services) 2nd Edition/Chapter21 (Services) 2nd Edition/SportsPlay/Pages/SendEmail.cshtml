@@ -1,0 +1,37 @@
+﻿@page "/"
+@model SportsPlay.Pages.SendEmailModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Change Password</h1>
+
+<label>Message:</label>
+<label style="color: @Model.MessageColor">@Model.Message</label>
+
+<form method="post">
+
+    <table>
+        <tr>
+            <td><label>Email Address</label></td>
+            <td><input asp-for="EmailAddress" /></td>
+        </tr>
+        <tr>
+            <td><label>Current Password</label></td>
+            <td><input asp-for="CurrentPassword" type="password" /></td>
+        </tr>
+        <tr>
+            <td><label>New Password</label></td>
+            <td><input asp-for="NewPassword" type="password" /></td>
+        </tr>
+        <tr>
+            <td><label>New Password (Repeat)</label></td>
+            <td><input asp-for="NewPasswordRepeat" type="password" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input asp-page-handler="ChangePassword" type="submit" value="Change Password" /></td>
+        </tr>
+    </table>
+
+</form>

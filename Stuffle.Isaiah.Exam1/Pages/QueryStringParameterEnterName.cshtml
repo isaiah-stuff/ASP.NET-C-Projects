@@ -1,0 +1,18 @@
+﻿@page 
+@model Stuffle.Isaiah.Exam1.Pages.QueryStringParameterEnterNameModel
+@{
+    ViewData["Title"] = "QueryStringParameterEnterName";
+}
+
+<form method="post">
+    <table>
+        <tr>
+            <td><label>Name: </label></td>
+            <td><input asp-for="Name" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input asp-page-handler="PassQueryStringParameter" type="submit" value="Pass Query String Parameter" /></td>
+        </tr>
+    </table>
+</form>

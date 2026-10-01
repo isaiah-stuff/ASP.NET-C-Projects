@@ -1,0 +1,60 @@
+﻿@page 
+@model SportsPlay.Pages.FilterSelectAsynchronousPopulationModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Display Orders</h1>
+
+<form method="post">
+
+    <input asp-page-handler="Filter" type="submit" value="Filter" />
+    <select asp-for="EmployeeID" asp-items="@Model.EmployeeSelectList" onchange="UpdateOrderSelectList(this.value);">
+        <option value="0">- Employee -</option>
+    </select>
+    <span id="spaOrder">
+        <select asp-for="OrderID" asp-items="@Model.OrderSelectList">
+            <option value="0">- Order ID -</option>
+        </select>
+    </span>
+
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th><label>Order ID</label></th>
+            <th><label>Date</label></th>
+            <th><label>Last Name</label></th>
+            <th><label>First Name</label></th>
+            <th><label>Middle Initial</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.ResultIList != null)
+        {
+            @foreach (var item in Model.ResultIList)
+            {
+                <tr>
+                    <td><label>@item.OrderID</label></td>
+                    <td><label>@item.Date</label></td>
+                    <td><label>@item.LastName</label></td>
+                    <td><label>@item.FirstName</label></td>
+                    <td><label>@item.MiddleInitial</label></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<script type="text/javascript">
+
+    // Perform a jQuery function to asynchronously populate
+    // the order drop-down list based on the selected employee.
+    function UpdateOrderSelectList(EmployeeID) {
+
+        $('#spaOrder').load('?handler=PopulateOrderSelectList&EmployeeID=' + EmployeeID + ' #spaOrder>*');
+
+    }
+
+</script>

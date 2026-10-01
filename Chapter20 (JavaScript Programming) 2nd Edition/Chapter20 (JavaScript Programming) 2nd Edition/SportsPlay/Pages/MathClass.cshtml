@@ -1,0 +1,29 @@
+﻿@page 
+@model SportsPlay.Pages.MathClassModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Math Class</h1>
+<input id="txtInput" value="3.7" /><br />
+<textarea id="txtOutput" cols="40" rows="4" ></textarea><br />
+<input onclick="ManipulateNumber();" type="button" value="Manipulate Number" /><br />
+
+<script type="text/javascript">
+
+    function ManipulateNumber() {
+
+        var strInput = document.getElementById("txtInput").value;
+        var strOutput = "";
+        strOutput = strOutput + "Math.floor() = " + Math.floor(strInput) + "\n";
+        strOutput = strOutput + "Math.pow() = " + Math.pow(strInput, 2) + "\n";
+        //C# rounds to the nearest even integer, javascript works like regualar math
+        strOutput = strOutput + "Math.round() = " + Math.round(strInput) + "\n";
+        //truncation is cutting off the decimal values and leaving the whole number with no rounding or changing
+        //different from floor in negative numbers
+        strOutput = strOutput + "Math.trunc() = " + Math.trunc(strInput);
+        document.getElementById("txtOutput").value = strOutput;
+
+    }
+
+</script>

@@ -1,0 +1,39 @@
+﻿@page 
+@model SportsPlay.Pages.SwitchStructureModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Switch Structure</h1>
+
+<select id="selSupplier" onchange="DisplayOption();">
+    <option value=""></option>
+    <option value="A">Adidas</option>
+    <option value="B">Babolat</option>
+    <option value="H">Head</option>
+</select><br />
+<input id="txtPointOfContact" />
+
+<script type="text/javascript">
+
+    function DisplayOption() {
+
+        var strOptionValue = document.getElementById("selSupplier").value;
+        //can use an alert to check that the values are actually being saved
+        var strPointOfContact = "";
+        switch (strOptionValue) {
+            case "A":
+                strPointOfContact = "Alan Alte";
+                break;
+            case "B":
+                strPointOfContact = "Bill Baker";
+                break;
+            case "H":
+                strPointOfContact = "Hailey Hawkins";
+                break;
+        }
+        document.getElementById("txtPointOfContact").value = strPointOfContact;
+
+    }
+
+</script>

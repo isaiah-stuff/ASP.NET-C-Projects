@@ -1,0 +1,38 @@
+﻿@page
+@model SportsPlay.Pages.FilterInputTextModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Display Products</h1>
+
+<form method="post">
+
+    <input asp-page-handler="Filter" type="submit" value="Filter" />
+    <input asp-for="Filter" />
+
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th><label>Category</label></th>
+            <th><label>Supplier</label></th>
+            <th><label>Product</label></th>
+            <th><label>Image</label></th>
+            <th><label>Price</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ResultIList)
+        {
+        <tr>
+            <td><label>@item.Category</label></td>
+            <td><label>@item.Supplier</label></td>
+            <td><label>@item.Product</label></td>
+            <td><label>@item.Image</label></td>
+            <td><label>@item.Price</label></td>
+        </tr>
+        }
+    </tbody>
+</table>

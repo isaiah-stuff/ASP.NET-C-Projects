@@ -1,0 +1,34 @@
+﻿@page 
+@model Stuffle.Isaiah.Chapter23.Pages.FilterCustomersWithTextModel
+@{
+    ViewData["Title"] = "Display Customers";
+}
+
+<h1>Display Customers</h1>
+
+<form method="post">
+
+    <input asp-page-handler="Filter" type="submit" value="Filter" />
+    <input asp-for="Filter" />
+
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th><label>Last Name</label></th>
+            <th><label>First Name</label></th>
+            <th><label>Middle Initial</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CustomerIList)
+        {
+            <tr>
+                <td><label>@item.LastName</label></td>
+                <td><label>@item.FirstName</label></td>
+                <td><label>@item.MiddleInitial</label></td>
+            </tr>
+        }
+    </tbody>
+</table>

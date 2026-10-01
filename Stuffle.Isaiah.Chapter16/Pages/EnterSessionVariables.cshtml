@@ -1,0 +1,55 @@
+﻿@page "/"
+@model Stuffle.Isaiah.Chapter16.Pages.EnterSessionVariablesModel
+@{
+    ViewData["Title"] = "ACRP";
+    ViewData["Page"] = "Log In/Out";"
+}
+
+<h1>Log In</h1>
+
+<label>Message:</label>
+<label style="color: @Model.MessageColor">@Model.Message</label>
+
+<form method="post">
+
+    <table>
+
+        <tr>
+            <td><label>Shipper</label></td>
+            <td><input asp-for="Shipper" /></td>
+        </tr>
+        <tr>
+            <td><label>Point of Contact</label></td>
+            <td><input asp-for="PointOfContact" /></td>
+        </tr>
+        <tr>
+            <td><label>Address</label></td>
+            <td><input asp-for="Address" /></td>
+        </tr>
+        <tr>
+            <td><label>City</label></td>
+            <td><input asp-for="City" /></td>
+        </tr>
+        <tr>
+            <td><label>State</label></td>
+            <td><input asp-for="State" /></td>
+        </tr>
+        <tr>
+            <td><label>Zip Code</label></td>
+            <td><input asp-for="ZipCode" /></td>
+        </tr>
+        <tr>
+            <td><label>Phone</label></td>
+            <td><input asp-for="Phone" /></td>
+        </tr>
+        <tr>
+            <td><label>Email Address</label></td>
+            <td><input asp-for="EmailAddress" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input asp-page-handler="DisplayShipperQueryStringParameters" type="submit" value="Display Sesssion Variables" /></td>
+        </tr>
+    </table>
+
+</form>

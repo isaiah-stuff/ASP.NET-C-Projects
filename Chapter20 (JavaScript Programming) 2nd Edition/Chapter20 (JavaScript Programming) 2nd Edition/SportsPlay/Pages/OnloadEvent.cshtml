@@ -1,0 +1,30 @@
+﻿@page 
+@model SportsPlay.Pages.OnloadEventModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Onload Event</h1>
+
+<img id="img1" hidden src="~/images/AB17PA.jpg" />
+<img id="img2" hidden src="~/images/NFWS.jpg" />
+
+<script type="text/javascript">
+
+    onload = CycleThroughImages();
+
+    function CycleThroughImages() {
+
+        if (document.getElementById("img1").hidden == false) {
+            document.getElementById("img1").hidden = true;
+            document.getElementById("img2").hidden = false;
+        }
+        else {
+            document.getElementById("img1").hidden = false;
+            document.getElementById("img2").hidden = true;
+        }
+        setTimeout("CycleThroughImages();", 2000);
+
+    }
+
+</script>

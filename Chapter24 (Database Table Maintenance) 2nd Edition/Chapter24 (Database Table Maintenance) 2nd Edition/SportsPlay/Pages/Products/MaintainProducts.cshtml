@@ -1,0 +1,40 @@
+﻿@page
+@model SportsPlay.Pages.Products.MaintainProductsModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Maintain Products</h1>
+
+<label>Message:</label>
+<label style="color: @Model.MessageColor">@Model.Message</label><br />
+
+<table class="table">
+    <thead>
+        <tr>
+            @*anchor element*@
+            @*directs to addproduct page not redirect*@
+            <td><a asp-page="AddProduct">Add</a></td>
+            <th><label>Category</label></th>
+            <th><label>Supplier</label></th>
+            <th><label>Product</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ResultIList)
+        {
+            <tr>
+                <td>
+                    @*asp-route-intProductID tells it to pass the ProductID to the Modify Page 
+                        Need to know what product to modify/delete
+                    *@
+                    <a asp-page="ModifyProduct" asp-route-intProductID="@item.ProductID">Modify</a>
+                    <a asp-page="DeleteProduct" asp-route-intProductID="@item.ProductID" onclick="return confirm('Are you sure you want to delete this item? Click OK to delete it. Click Cancel to keep it.')">Delete</a>
+                </td>
+                <td><label>@item.Category</label></td>
+                <td><label>@item.Supplier</label></td>
+                <td><label>@item.Product</label></td>
+            </tr>
+        }
+    </tbody>
+</table>

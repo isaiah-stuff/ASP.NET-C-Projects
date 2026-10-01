@@ -1,0 +1,46 @@
+﻿@page 
+@model SportsPlay.Pages.ElementAttributesModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Element Attributes</h1>
+
+<textarea id="txtTextarea"></textarea><br />
+<input onclick="ModifyTextarea();" type="button" value="Modify Textarea" /><br />
+<label id="lblLabel">Original Label</label><br />
+<input onclick="ModifyLabel();" type="button" value="Modify Label" /><br />
+<input id="chkBoth" onchange="ModifyCheckboxes();" type="checkbox" /> Both
+<input id="chkMens" type="checkbox" /> Mens
+<input id="chkWomens" type="checkbox" /> Womens
+
+<script type="text/javascript">
+
+    function ModifyTextarea() {
+
+        document.getElementById("txtTextarea").cols = "80";
+        document.getElementById("txtTextarea").rows = "8";
+        document.getElementById("txtTextarea").value = "You have modified the textarea.";
+
+    }
+
+    function ModifyLabel() {
+
+        document.getElementById("lblLabel").innerText = "New Label";
+
+    }
+
+    function ModifyCheckboxes() {
+
+        if (document.getElementById("chkBoth").checked) {
+            document.getElementById("chkMens").checked = true;
+            document.getElementById("chkWomens").checked = true;
+        }
+        else {
+            document.getElementById("chkMens").checked = false;
+            document.getElementById("chkWomens").checked = false;
+        }
+
+    }
+
+</script>

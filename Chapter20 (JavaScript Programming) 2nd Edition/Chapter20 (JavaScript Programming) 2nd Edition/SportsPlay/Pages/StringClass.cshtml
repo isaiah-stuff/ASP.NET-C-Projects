@@ -1,0 +1,27 @@
+﻿@page 
+@model SportsPlay.Pages.StringClassModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>String Class</h1>
+
+<input id="txtInput" value="Welcome to SportsPlay!" /><br />
+<textarea id="txtOutput" cols="40" rows="4" ></textarea><br />
+<input onclick="ManipulateString();" type="button" value="Manipulate String" /><br />
+
+<script type="text/javascript">
+
+    function ManipulateString() {
+
+        var strInput = document.getElementById("txtInput").value;
+        var strOutput = "";
+        strOutput = strOutput + "length = " + strInput.length + "\n";
+        strOutput = strOutput + "substring() = " + strInput.substring(11, 22) + "\n";
+        strOutput = strOutput + "toLowerCase() = " + strInput.toLowerCase() + "\n";
+        strOutput = strOutput + "replaceAll() = " + strInput.replaceAll("o", "*");
+        document.getElementById("txtOutput").value = strOutput;
+
+    }
+
+</script>

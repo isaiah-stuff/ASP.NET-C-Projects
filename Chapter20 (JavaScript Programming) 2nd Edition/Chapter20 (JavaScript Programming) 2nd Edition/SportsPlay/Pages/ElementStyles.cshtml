@@ -1,0 +1,39 @@
+﻿@page 
+@model SportsPlay.Pages.ElementStylesModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Element Styles</h1>
+
+<textarea id="txtTextarea">Welcome to SportsPlay!</textarea><br />
+<input onclick="ModifyTextarea();" type="button" value="Modify Textarea" /><br />
+<input id="btnSubmit" onmouseover="ModifyButton()" onmouseout="ResetButton()" type="button" value="Submit" />
+
+<script type="text/javascript">
+
+    function ModifyTextarea() {
+
+        document.getElementById("txtTextarea").style.backgroundColor = "black";
+        document.getElementById("txtTextarea").style.color = "white";
+        document.getElementById("txtTextarea").style.fontFamily = "Courier New";
+
+    }
+
+    function ModifyButton() {
+
+        document.getElementById("btnSubmit").style.backgroundColor = "darkgray";
+        document.getElementById("btnSubmit").style.boxShadow = "0.25rem 0.25rem 0.75rem lightgray";
+        document.getElementById("btnSubmit").style.color = "white";
+
+    }
+
+    function ResetButton() {
+
+        document.getElementById("btnSubmit").style.backgroundColor = "";
+        document.getElementById("btnSubmit").style.boxShadow = "";
+        document.getElementById("btnSubmit").style.color = "";
+
+    }
+
+</script>

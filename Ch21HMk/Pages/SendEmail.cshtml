@@ -1,0 +1,51 @@
+﻿@page "/"
+@model Ch21HMk.Pages.SendEmailModel
+@{
+}
+
+<h1>Send Email</h1>
+
+<label>Message:</label>
+<label style="color: @Model.MessageColor">@Model.PageMessage</label>
+
+<form method="post">
+    <table>
+        <tr>
+            @*labels should display Text Format, and Message,*@
+            <td><label>From</label></td>
+            <td><input asp-for="From" /></td>
+        </tr>
+        <tr>
+            <td><label>To</label></td>
+            <td><input asp-for="To"/></td>
+        </tr>
+        <tr>
+            <td><label>CC</label></td>
+            <td><input asp-for="CC" /></td>
+        </tr>
+        <tr>
+            <td><label>BCC</label></td>
+            <td><input asp-for="BCC" /></td>
+        </tr>
+        <tr>
+            <td><label>Subject</label></td>
+            <td><input asp-for="Subject" type= /></td>
+        </tr>
+        <tr>
+            <td><label>Text Format</label></td>
+            <td><input asp-for="TextFormat" checked type="radio" value="Text"/>Text</td><br />
+            <td><input asp-for="TextFormat" type="radio" value="HTML"/>HTML</td>
+        </tr>
+        <tr>
+            <td><label>Message</label></td>
+            <td><textarea asp-for="Message" rows="7"></textarea></td><br />
+            
+        </tr>
+        <tr>
+            <td></td>
+            <td><input asp-page-handler="Send" type="submit" value="Send" /></td>
+        </tr>
+    </table>
+</form>
+
+

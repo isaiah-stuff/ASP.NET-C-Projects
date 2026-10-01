@@ -1,0 +1,68 @@
+﻿@page
+@model SportsPlay.Pages.Products.AddProductModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>Add Product</h1>
+
+<label>Message:</label>
+<label style="color: @Model.MessageColor">@Model.Message</label>
+
+<form method="post">
+
+    <table>
+        <tr>
+            <td><label asp-for="Product.CategoryID"></label></td>
+            <td>
+                <select asp-for="Product.CategoryID" asp-items="@Model.CategorySelectList">
+                    <option value=""></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Product.SupplierID"></label></td>
+            <td>
+                <select asp-for="Product.SupplierID" asp-items="@Model.SupplierSelectList">
+                    <option value=""></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Product.Product1"></label></td>
+            <td><input asp-for="Product.Product1" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Product.Description"></label></td>
+            <td><input asp-for="Product.Description" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Product.Image"></label></td>
+            <td><input asp-for="Product.Image" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Product.Price"></label></td>
+            <td><input asp-for="Product.Price" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Product.NumberInStock"></label></td>
+            <td><input asp-for="Product.NumberInStock" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Product.NumberOnOrder"></label></td>
+            <td><input asp-for="Product.NumberOnOrder" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Product.ReorderLevel"></label></td>
+            <td><input asp-for="Product.ReorderLevel" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input asp-page-handler="Add" type="submit" value="Add" />
+                <a asp-page="CancelProduct">Cancel</a>
+            </td>
+        </tr>
+    </table>
+
+</form>

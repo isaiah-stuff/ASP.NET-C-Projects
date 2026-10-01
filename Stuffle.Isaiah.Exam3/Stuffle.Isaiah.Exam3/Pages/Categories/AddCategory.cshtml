@@ -1,0 +1,29 @@
+﻿@page
+@model Stuffle.Isaiah.Exam3.Pages.Categories.AddCategoryModel
+@{ 
+    ViewData["Title"] = "Add Category";
+}
+
+
+<h1>Add Category</h1>
+
+<label>Message:</label>
+<label style="color: @Model.MessageColor">@Model.Message</label>
+
+<form method="post">
+
+    <table>
+        <tr>
+            <td><label asp-for="Category.Category1"></label></td>
+            <td><input asp-for="Category.Category1" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input asp-page-handler="Add" type="submit" value="Add" />
+                <a asp-page="CancelCategory">Cancel</a>
+            </td>
+        </tr>
+    </table>
+
+</form>

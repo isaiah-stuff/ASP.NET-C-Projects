@@ -1,0 +1,25 @@
+﻿@page 
+@model SportsPlay.Pages.ForStructureModel
+@{
+    ViewData["Title"] = "ACRP";
+}
+
+<h1>For Structure</h1>
+
+<input id="txtSuppliers" /><br />
+<input onclick="PerformLoop();" type="button" value="Perform Loop" />
+
+<script type="text/javascript">
+
+    function PerformLoop() {
+
+        var strSupplierArray = ["Adidas", "Babolat", "Head"];
+        var strSupplierList = "";
+        for (let i = 0; i < strSupplierArray.length; i++) {
+            strSupplierList = strSupplierList + strSupplierArray[i] + " ";
+        }
+        document.getElementById("txtSuppliers").value = strSupplierList;
+
+    }
+
+</script>

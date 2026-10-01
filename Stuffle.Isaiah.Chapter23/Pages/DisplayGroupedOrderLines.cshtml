@@ -1,0 +1,38 @@
+﻿@page 
+@model Stuffle.Isaiah.Chapter23.Pages.DisplayGroupedOrderLinesModel
+@{
+    ViewData["Title"] = "Display Grouped Order Lines";
+}
+
+<h1>Display Grouped Order Lines</h1>
+
+@*display the order ID, date, number of order lines, sum of the prices, 
+average price, maximum price, and minimum price. Display the report in order by order ID.*@
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th><label>Order ID</label></th>
+            <th><label>Order Lines</label></th>
+            <th><label>Sum of Prices</label></th>
+            <th><label>Average Prices</label></th>
+            <th><label>Maximum Price</label></th>
+            <th><label>Minimum Price</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ResultIList)
+        {
+            <tr>
+                <td><label>@item.OrderID</label></td>
+                <td><label>@item.OrderLines</label></td>
+                <td><label>@item.SumOfPrices</label></td>
+                <td><label>@item.Average</label></td>
+                <td><label>@item.Maximum</label></td>
+                <td><label>@item.Minimum</label></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
